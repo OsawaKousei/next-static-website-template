@@ -1,0 +1,19 @@
+volumes:
+  next-static-website-template-node-modules:
+
+services:
+  next-static-website-template-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend/app:/app
+      - next-static-website-template-node-modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - next-static-website-template-app-network
+
+networks:
+  next-static-website-template-app-network:
+    driver: bridge
