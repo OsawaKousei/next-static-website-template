@@ -41,7 +41,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: initialize repository from template"
-          file_pattern: "docker-compose.yaml package.json" # コミット対象のファイル
+          file_pattern: "docker-compose.yaml frontend/app/package.json" # コミット対象のファイル
 
       # 5. コミット数が「1」の場合のみ、このワークフロー自体を削除します。
       - name: Self-destruct workflow
