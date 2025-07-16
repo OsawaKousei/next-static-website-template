@@ -28,7 +28,7 @@ jobs:
       - name: Replace placeholders
         if: steps.get_commit_count.outputs.count == '1'
         run: |
-          files_to_update=("docker-compose.yaml" "package.json") # 置換対象のファイル
+          files_to_update=("docker-compose.yaml" "frontend/app/package.json") # 置換対象のファイル
           for file in "${files_to_update[@]}"; do
             if [ -f "$file" ]; then
               sed -i "s/{{repository_name}}/${{ github.event.repository.name}}/g" "$file"
