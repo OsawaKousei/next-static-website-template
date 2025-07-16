@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Hero() {
   return (
     <section className="relative px-6 text-center h-[calc(100vh-80px)] flex items-center w-full">
@@ -29,18 +31,21 @@ export default function Hero() {
           企業の課題解決と成長を支援するテクノロジー企業です。
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="#contents"
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 hover:shadow-xl transition-all transform hover:scale-105"
+          <Button
+            asChild
+            size="lg"
+            className="bg-blue-600 text-white hover:bg-blue-700 hover:shadow-xl transition-all transform hover:scale-105"
           >
-            ソリューションを見る
-          </a>
-          <a
-            href="#contact"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all"
+            <a href="#contents">ソリューションを見る</a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 transition-all"
           >
-            相談する
-          </a>
+            <a href="#contact">相談する</a>
+          </Button>
         </div>
       </div>
     </section>

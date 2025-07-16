@@ -14,9 +14,9 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-4">サービス</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#solutions" className="hover:text-white transition-colors">レポート支援</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">モバイルアプリ開発</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">テクノロジーソリューション</a></li>
+                <li><a href="#contents" className="hover:text-white transition-colors">レポート支援</a></li>
+                <li><a href="#contents" className="hover:text-white transition-colors">モバイルアプリ開発</a></li>
+                <li><a href="#contents" className="hover:text-white transition-colors">テクノロジーソリューション</a></li>
               </ul>
             </div>
             <div>
