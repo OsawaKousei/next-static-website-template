@@ -109,9 +109,27 @@ npm run build
 
 ### 本番ビルドの取得
 
+#### ビルドスクリプトを使用する場合（推奨）
+
+プロジェクトルートのビルドスクリプトを実行します：
+
+```bash
+./build.sh
+```
+
+このスクリプトは以下の処理を自動的に行います：
+
+- 旧ビルドの削除
+- Docker コンテナのビルド
+- 静的ファイルの `./dist` ディレクトリへのコピー
+
+#### 手動でビルドする場合
+
 Docker コンテナから静的ファイルを取得するには：
 
 ```bash
+# 古いビルドを削除
+rm -rf ./dist
 # ビルド用コンテナを作成
 docker build -f frontend/Dockerfile -t website-build ./frontend
 
@@ -129,7 +147,7 @@ docker rm temp-container
 
 ```bash
 # AWS CLIがインストール・設定済みの場合
-aws s3 sync ./out s3://your-bucket-name --delete
+aws s3 sync ./dist s3://kvt-homepage-static-website --delete --p kvt
 ```
 
 ## 技術スタック
