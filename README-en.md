@@ -107,9 +107,27 @@ The built static files will be generated in the `frontend/app/out` directory.
 
 ### Extracting Production Build
 
+#### Using Build Script (Recommended)
+
+Run the build script from the project root:
+
+```bash
+./build.sh
+```
+
+This script automatically performs the following:
+
+- Remove old builds
+- Build Docker container
+- Copy static files to `./dist` directory
+
+#### Manual Build
+
 To extract static files from Docker container:
 
 ```bash
+# Remove old builds
+rm -rf ./dist
 # Create build container
 docker build -f frontend/Dockerfile -t website-build ./frontend
 
@@ -127,7 +145,7 @@ docker rm temp-container
 
 ```bash
 # If AWS CLI is installed and configured
-aws s3 sync ./out s3://your-bucket-name --delete
+aws s3 sync ./dist s3://your-bucket-name --delete
 ```
 
 ## Tech Stack
