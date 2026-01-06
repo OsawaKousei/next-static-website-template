@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import ContentCard from "@/components/ui/ContentCard";
+import ContentCard from "./ContentCard";
 
 export default function Contents() {
   const t = useTranslations('Contents');
