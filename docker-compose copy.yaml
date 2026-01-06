@@ -1,19 +1,19 @@
 volumes:
-  tmp-node-modules:
+  {{repository_name}}-node-modules:
 
 services:
-  tmp-frontend:
+  {{repository_name}}-frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
     volumes:
       - ./frontend/app:/app
-      - tmp-node-modules:/app/node_modules
+      - {{repository_name}}-node-modules:/app/node_modules
     ports:
       - "3000:3000"
     networks:
-      - tmp-app-network
+      - {{repository_name}}-app-network
 
 networks:
-  tmp-app-network:
+  {{repository_name}}-app-network:
     driver: bridge

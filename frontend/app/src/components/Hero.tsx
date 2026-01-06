@@ -1,6 +1,11 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   return (
     <section className="relative px-6 text-center h-[calc(100vh-80px)] flex items-center w-full">
       {/* 背景オーバーレイ */}
@@ -19,16 +24,16 @@ export default function Hero() {
       {/* Content with relative positioning to appear above overlay */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-          テクノロジーで
+          {t('title1')}
           <br />
-          ビジネスの可能性を
+          {t('title2')}
           <br />
-          <span className="primary-text-light">最大化</span>する
+          <span className="primary-text-light">{t('title3')}</span>{t('title4')}
         </h1>
         <p className="text-xl md:text-2xl text-gray-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-          最新の技術とビジネス知見を組み合わせ、
+          {t('description1')}
           <br />
-          企業の課題解決と成長を支援するテクノロジー企業です。
+          {t('description2')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
@@ -36,7 +41,7 @@ export default function Hero() {
             size="lg"
             className="bg-blue-600 text-white hover:bg-blue-700 hover:shadow-xl transition-all transform hover:scale-105"
           >
-            <a href="#contents">ソリューションを見る</a>
+            <a href="#contents">{t('viewSolutions')}</a>
           </Button>
           <Button
             asChild
@@ -44,7 +49,7 @@ export default function Hero() {
             size="lg"
             className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 transition-all"
           >
-            <a href="#contact">相談する</a>
+            <a href="#contact">{t('consult')}</a>
           </Button>
         </div>
       </div>

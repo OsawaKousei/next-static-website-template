@@ -1,6 +1,11 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import ContentCard from "@/components/ui/ContentCard";
 
 export default function Contents() {
+  const t = useTranslations('Contents');
+
   const contentData = [
     {
       icon: (
@@ -10,14 +15,14 @@ export default function Contents() {
           </svg>
         </div>
       ),
-      title: "レポート自動化ツール",
-      description: "データ分析からレポート生成まで自動化し、意思決定プロセスを効率化するWebアプリケーション。",
+      title: t('reportTool.title'),
+      description: t('reportTool.description'),
       features: [
-        "データ可視化・分析",
-        "AI駆動レポート生成",
-        "カスタムダッシュボード"
+        t('reportTool.feature1'),
+        t('reportTool.feature2'),
+        t('reportTool.feature3')
       ],
-      status: "開発中",
+      status: t('reportTool.status'),
       statusColor: "orange" as const
     },
     {
@@ -28,12 +33,12 @@ export default function Contents() {
           </svg>
         </div>
       ),
-      title: "モバイルアプリ開発",
-      description: "機械学習、画像認識、自然言語処理を統合したモバイルアプリケーションの設計・開発。",
+      title: t('mobileApp.title'),
+      description: t('mobileApp.description'),
       features: [
-        "iOS/Android/Web対応",
-        "リアルタイム画像認識",
-        "パーソナライゼーション"
+        t('mobileApp.feature1'),
+        t('mobileApp.feature2'),
+        t('mobileApp.feature3')
       ]
     },
     {
@@ -44,12 +49,12 @@ export default function Contents() {
           </svg>
         </div>
       ),
-      title: "カスタムソリューション",
-      description: "最新技術を活用したカスタムシステム、チャットボットの構築。",
+      title: t('customSolution.title'),
+      description: t('customSolution.description'),
       features: [
-        "企業向けチャットボット",
-        "文書自動生成・要約",
-        "API統合サポート"
+        t('customSolution.feature1'),
+        t('customSolution.feature2'),
+        t('customSolution.feature3')
       ]
     }
   ];
@@ -60,10 +65,10 @@ export default function Contents() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              提供ソリューション
+              {t('title')}
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              AI技術を活用した実用的なソリューションで、お客様のビジネス課題を解決します
+              {t('description')}
             </p>
           </div>
           

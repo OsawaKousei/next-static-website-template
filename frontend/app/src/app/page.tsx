@@ -1,22 +1,21 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Contents from "@/components/Contents";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+'use client';
+import { useEffect } from 'react';
 
-export default function Home() {
+export default function RootPage() {
+  useEffect(() => {
+    const lang = navigator.language.split('-')[0];
+    const supportedLocales = ['ja', 'en'];
+    const target = supportedLocales.includes(lang) ? lang : 'ja'; // デフォルトはja
+    window.location.replace(`/${target}/`);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <div className="section-divider"></div>
-      <Contents />
-      <div className="section-divider"></div>
-      <About />
-      <div className="section-divider"></div>
-      <Contact />
-      <Footer />
-    </div>
+    <html>
+      <head>
+        <meta name="robots" content="noindex, follow" />
+        <noscript><meta httpEquiv="refresh" content="0; url=/en/" /></noscript>
+      </head>
+      <body style={{ backgroundColor: '#fff' }} />
+    </html>
   );
 }
