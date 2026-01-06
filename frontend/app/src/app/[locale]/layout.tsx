@@ -2,7 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ReactNode } from 'react';
-import { routing } from '@/i18n/routing';
+import { routing } from '@/navigation';
 import '../globals.css';
 
 const domain = 'https://example.com';

@@ -1,5 +1,19 @@
-// Re-export for backward compatibility
-export { routing as default } from './i18n/routing';
-export { routing, type Locale } from './i18n/routing';
-export const locales = ['ja', 'en'] as const;
-export const defaultLocale = 'en';
+import { getRequestConfig } from 'next-intl/server';
+import { routing } from './navigation';
+
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale;
+
+  // Validate that the incoming locale is valid
+  if (!locale || !routing.locales.includes(locale as typeof routing.locales[number])) {
+    locale = routing.defaultLocale;
+  }
+
+  return {
+    locale,
+    messages: (await import(`../messages/${locale}.json`)).default
+  };
+});
+
+// Re-export for convenience
+export { routing, locales, defaultLocale, type Locale } from './navigation';
