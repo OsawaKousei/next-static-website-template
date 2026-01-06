@@ -12,14 +12,13 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-slate-900 opacity-70"></div>
 
       {/* 背景画像 */}
-      <div
-        className="absolute inset-0 z-0 opacity-50 mix-blend-overlay"
-        style={{
-          backgroundImage: "url(/hero-bg.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="absolute inset-0 z-0 opacity-50 mix-blend-overlay">
+        <img
+          src="/hero-bg.png"
+          alt="Hero background"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
       {/* Content with relative positioning to appear above overlay */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
