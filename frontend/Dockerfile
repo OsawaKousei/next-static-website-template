@@ -9,7 +9,7 @@ RUN apk add bash
 COPY ./app/package*.json ./
 
 # 依存関係をインストール
-RUN npm ci --only=production
+RUN npm ci
 
 # ソースコードをコピー
 COPY ./app .
